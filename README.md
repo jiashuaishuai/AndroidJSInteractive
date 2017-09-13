@@ -58,4 +58,4 @@ public WebResourceResponse shouldInterceptRequest(WebView view,
 
 
 
-## 转自 <http://blog.csdn.net/harvic880925/article/details/51523983>
+## 摘自 <http://blog.csdn.net/harvic880925/article/details/51523983>
