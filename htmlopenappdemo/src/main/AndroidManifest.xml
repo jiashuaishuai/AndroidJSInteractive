@@ -9,38 +9,42 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".MainActivity"
+            android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<activity android:name=".OpenTestActivity">
-    <!--第一种方式:自定义-->
-    <intent-filter>
-        <action android:name="android.intent.action.VIEW" />
+        <activity
+            android:name=".OpenTestActivity"
+            android:launchMode="singleTop">
+            <!--第一种方式:自定义-->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
 
-        <category android:name="android.intent.category.DEFAULT" />
-        <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
 
-        <data
-            android:host="open_test_demo"
-            android:scheme="app" />
-    </intent-filter>
+                <data
+                    android:host="open_test_demo"
+                    android:scheme="app" />
+            </intent-filter>
 
-    <!--第二种方式：以http协议 一般不要使用http协议的，因为http默认会打开网页-->
-    <intent-filter>
-        <action android:name="android.intent.action.VIEW" />
+            <!--第二种方式：以http协议 一般不要使用http协议的，因为http默认会打开网页-->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
 
-        <category android:name="android.intent.category.DEFAULT" />
-        <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
 
-        <data
-            android:host="www.baidu.com"
-            android:scheme="http" />
-    </intent-filter>
-</activity>
+                <data
+                    android:host="www.baidu.com"
+                    android:scheme="http" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
