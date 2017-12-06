@@ -54,7 +54,7 @@ public WebResourceResponse shouldInterceptRequest(WebView view,
 }  
 
 ```
-##添加打开App功能
+## 添加打开App功能
 核心代码html端
 ```html
         <a href="http://www.baidu.com?params=张三">打开app页面(http://www.baidu.com?params=张三)</a>
@@ -134,4 +134,4 @@ public class AppActivityActivity extends AppCompatActivity {
 
 
 ## 摘自 <http://blog.csdn.net/harvic880925/article/details/51523983>
-##打开app摘自<http://blog.csdn.net/fenggit/article/details/51028277>
+## 打开app摘自<http://blog.csdn.net/fenggit/article/details/51028277>
