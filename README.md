@@ -54,8 +54,84 @@ public WebResourceResponse shouldInterceptRequest(WebView view,
 }  
 
 ```
+##添加打开App功能
+核心代码html端
+```html
+        <a href="http://www.baidu.com?params=张三">打开app页面(http://www.baidu.com?params=张三)</a>
+        <br><br><br>
+        <a href="app://AndroidHtml?params=zhangsan">打开app页面(app://AndroidHtml?params=zhangsan)</a>
+        <br>
+```
+Android端代码
+```java
+<activity
+            android:name=".openapp.AppActivityActivity"
+            android:label="@string/title_activity_app">
 
+
+            <!--第一种方式:自定义-->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="AndroidHtml"
+                    android:scheme="app" />
+            </intent-filter>
+
+            <!--第二种方式：以http协议-->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="www.baidu.com"
+                    android:scheme="http" />
+            </intent-filter>
+
+            <!-- 2个方式选择一种就可以了-->
+        </activity>
+```
+Activity端代码
+```java
+public class AppActivityActivity extends AppCompatActivity {
+    public static final String TAG = "AppActivityActivity";
+
+    TextView textView;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_app);
+
+        textView = (TextView) findViewById(R.id.text);
+
+        Intent intent = getIntent();
+        String scheme = intent.getScheme();
+        Uri uri = intent.getData();
+
+
+        if (uri != null) {
+            String host = uri.getHost();
+            String path = uri.getPath();
+            String encodedPath = uri.getEncodedPath();
+            String queryString = uri.getQuery();
+
+            // 链接所有数据
+            String dataString = intent.getDataString();
+
+            // 获取链接所携带的参数数据
+            String params = uri.getQueryParameter("params");
+        }
+    }
+}
+```
 
 
 
 ## 摘自 <http://blog.csdn.net/harvic880925/article/details/51523983>
+##打开app摘自<http://blog.csdn.net/fenggit/article/details/51028277>
