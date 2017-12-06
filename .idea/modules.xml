@@ -3,9 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AndroidJSInteractive.iml" filepath="$PROJECT_DIR$/AndroidJSInteractive.iml" />
-      <module fileurl="file://$PROJECT_DIR$/AndroidJSInteractive.iml" filepath="$PROJECT_DIR$/AndroidJSInteractive.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/htmlopenappdemo/htmlopenappdemo.iml" filepath="$PROJECT_DIR$/htmlopenappdemo/htmlopenappdemo.iml" />
     </modules>
   </component>
 </project>
