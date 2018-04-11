@@ -135,3 +135,17 @@ public class AppActivityActivity extends AppCompatActivity {
 
 ## 摘自 <http://blog.csdn.net/harvic880925/article/details/51523983>
 ## 打开app摘自<http://blog.csdn.net/fenggit/article/details/51028277>
+## URL解析<https://www.jianshu.com/p/2ec3f06d6087>
+定义类似Http协议如
+   
+    jsbridge://className:port/methodName?jsonObj
+        
+   1. jsbridge:协议
+   2. className:功能模块类名
+   3. port：回调js方法名
+   4. methodName：方法名
+   5. jsonObj：参数
+   
+   根据以上参数通过java反射机制调用Native方法
+        
+## 性能优化WebVIew单进程<https://www.jianshu.com/p/fd61e8f4049e>
